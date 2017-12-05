@@ -574,3 +574,26 @@ function odin_get_term_meta( $term_id, $field ) {
 
 	return $value;
 }
+
+/**
+ * Get page ID
+ * Return page ID
+ * Usage:
+ * <?php echo odin_get_page_ID( $page_slug );?>
+ *
+ * @since  2.2.7
+ *
+ * @param  string $page_slug Field value 
+ *
+ * @return int               ID post/page
+ */
+
+function odin_get_page_ID($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+} 
+
